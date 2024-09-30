@@ -1,0 +1,80 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "version": "3.7.5",
+  "name": "Lightspeed Digital Insight Agent",
+  "short_name": "Lightspeed Digital Insight Agent",
+  "description": "Lightspeed Digital Insight Agent",
+  "permissions": [
+    "storage",
+    "identity",
+    "identity.email",
+    "tabs",
+    "enterprise.deviceAttributes",
+    "alarms",
+    "storage",
+    "geolocation",
+    "system.cpu",
+    "system.storage",
+    "system.memory",
+    "offscreen"
+  ],
+  "host_permissions": [
+    "https://development-agent.catchon.com/",
+    "https://staging-agent.catchon.com/",
+    "https://my.catchon.com/",
+    "https://agent.catchon.com/"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/user-interaction.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/digital-insight(16x16).png",
+      "32": "images/digital-insight(32x32).png",
+      "48": "images/digital-insight(48x48).png",
+      "128": "images/digital-insight(128x128).png"
+    }
+  },
+  "storage": {
+    "managed_schema": "schema.json"
+  },
+  "icons": {
+    "16": "images/digital-insight(16x16).png",
+    "32": "images/digital-insight(32x32).png",
+    "48": "images/digital-insight(48x48).png",
+    "128": "images/digital-insight(128x128).png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "env/*.json",
+        "client.wasm",
+        "js/wasm_exec.js",
+        "js/speed_test.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "options_ui": {
+    "page": "location.html"
+  },
+  "manifest_version": 3
+}

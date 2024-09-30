@@ -1,0 +1,42 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 2,
+  "name": "Lightspeed Alert Helper",
+  "description": "Lightspeed Alert Helper for Chrome",
+  "version": "1.9.2306.21106",
+  "options_page": "options.html",
+  "icons": {
+    "16": "icon-16.png",
+    "128": "icon-128.png"
+  },
+  "permissions": [
+    "background",
+    "<all_urls>",
+    "history",
+    "http://*/*",
+    "https://*/*",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "all_frames": true,
+      "js": [
+        "in_page.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "main.js"
+    ]
+  },
+  "web_accessible_resources": [
+    "*.png"
+  ],
+  "incognito": "spanning"
+}

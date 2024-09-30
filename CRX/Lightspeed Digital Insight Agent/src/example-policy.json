@@ -1,0 +1,8 @@
+{
+  "EntitlementKey": {
+    "Value": "ent-key-here"
+  },
+  "Env": {
+    "Value": "dev"
+  }
+}

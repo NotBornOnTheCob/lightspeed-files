@@ -1,0 +1,19 @@
+{
+  "active": true,
+  "speedTestActive": false,
+  "locationDataActive": false,
+  "verifyUrl": "https://staging-agent.catchon.com/agentconfig/keys/verify",
+  "agentConfigUrl": "https://staging-agent.catchon.com/agentconfig/v2",
+  "endpointUrl": "https://staging-agent.catchon.com/catcher/api/receive",
+  "digitalEquityURL": "https://staging-agent.catchon.com/catcher/api/receive-equity",
+  "sendInterval": 5,
+  "checkinInterval": 60,
+  "inactiveTimeout": 900,
+  "maxAge": 240,
+  "collectPII": false,
+  "minCheck": 360,
+  "maxCheck": 720,
+  "speedTestURL": "insight-speedtest.stagingls.io",
+  "chunkSize": 80000,
+  "chunkCount": 40
+}

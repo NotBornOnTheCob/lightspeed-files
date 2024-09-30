@@ -1,0 +1,20 @@
+{
+  "active": true,
+  "speedTestActive": false,
+  "locationDataActive": false,
+  "verifyUrl": "https://development-agent.catchon.com/agentconfig/keys/verify",
+  "agentConfigUrl": "https://development-agent.catchon.com/agentconfig/v2",
+  "endpointUrl": "https://development-agent.catchon.com/catcher/api/receive",
+  "digitalEquityURL": "https://development-agent.catchon.com/catcher/api/receive-equity",
+  "sendInterval": 1,
+  "checkinInterval": 60,
+  "inactiveTimeout": 900,
+  "maxAge": 240,
+  "collectPII": false,
+  "log": true,
+  "minCheck": 360,
+  "maxCheck": 720,
+  "speedTestURL": "insight-speedtest.developmentls.io",
+  "chunkSize": 80000,
+  "chunkCount": 40
+}

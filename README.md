@@ -5,6 +5,7 @@
 
 ## Contents:
 - Installer MSIs (``.Installers``)
+- Chrome Extension CRXs + Extracted Files (``CRX``)
 - HTML Files for Blocked pages (``html``)
 - MITM-Injected JS Scripts (``inject``)
 - Proxy auto-setup script (``proxy``)
