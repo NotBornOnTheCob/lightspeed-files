@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><title>Blocked</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style> html {box-sizing: border-box;} *, *::before, *::after {box-sizing: inherit;} html, body, .b {height: 100%;}
+body { background: linear-gradient(to bottom, #444652, #28282E); font: 14px/1.3 Arial, sans-serif; margin: 0;
+-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.b { -ms-flex-align: center; align-items: center; color: #666e80; display: -ms-flexbox; display: flex; -ms-flex-direction: column;
+flex-direction: column; -ms-flex-pack: center; justify-content: center; min-height: 100vh; position: relative; text-align: center;
+z-index: 0; }
+.b .b-stripe { background: #404040; color: rgba(255, 255, 255, 0.8);
+-ms-flex: 0 1 auto; flex: 0 1 auto; margin: 32px 0; padding: 24px 16px; width: 100%; }
+.b .b-stripe-lg { font: 30px Arial, sans-serif; color: white; }
+</style> </head>
+<body>
+<div class="b">
+<div class="b-stripe">
+<div>Oops,</div>
+<div class="b-stripe-lg">Request Blocked</div>
+<div>{{.Host}} is blocked at this time <br/>{{.Message}}</div>
+</div> </div> </body> </html><!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Caution: Security Error</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html {
+box-sizing: border-box;
+}
+*::before,
+*::after {
+box-sizing: inherit;
+}
+body {
+background: linear-gradient(to bottom, #444652, #28282E);
+font: 14px/1.3 "Roboto", Arial, sans-serif;
+margin: 0;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.blockScreen {
+align-items: center;
+color: #666e80;
+display: flex;
+flex-direction: column;
+justify-content: center;
+min-height: 100vh;
+position: relative;
+text-align: center;
+z-index: 0;
+}
+.blockScreen svg {
+margin: 16px 0 8px;
+}
+.blockScreen .blockScreen-stripe {
+background: #00afd7;
+color: rgba(255, 255, 255, 0.8);
+flex: 0 1 auto;
+margin: 32px 0;
+padding: 24px 16px;
+width: 100%;
+}
+.blockScreen .blockScreenStripe-title {
+font: 24px "Roboto", Arial, sans-serif;
+color: white;
+}
+.blockScreen .blockScreenStripe-message {
+max-width: 640px;
+margin: 0 auto;
+}
+.blockScreen .blockScreen-systemMessage {
+color: #00afd7;
+margin: 0 16px;
+max-width: 640px;
+}
+.blockScreen a {
+transition: 0.2s;
+}
+.blockScreen a:hover {
+color: white;
+}
+.buttonBack {
+border: 2px solid #00afd7;
+color: #00afd7;
+cursor: pointer;
+display: block;
+line-height: 32px;
+margin: 24px 0;
+padding: 0 16px;
+text-decoration: none;
+width: 192px;
+}
+.buttonProceed {
+color: #939da3;
+font-size: 12px;
+}
+</style>
+</head>
+<body>
+<div class="blockScreen">
+<svg width="128" height="113" xmlns="http://www.w3.org/2000/svg">
+<title>Warning</title>
+<g id="ssl-issue" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+<g id="ssl-error" transform="translate(-576 -186)" stroke="#00AFD7" stroke-width="3">
+<g id="warning" transform="translate(576 186)">
+<path d="M61.919 3.41c1.15-1.883 3.018-1.875 4.162 0l59.475 97.475c1.15 1.884.282 3.411-1.92 3.411H4.364c-2.21 0-3.065-1.535-1.92-3.41L61.918 3.41z" id="Triangle-58"/>
+<path id="Rectangle-1700" d="M59.259 26.074h9.481v49.778h-9.481z"/>
+<circle id="Oval-1484" cx="64" cy="90.074" r="4.741"/>
+<path d="M33.185 111.407h61.63" id="Line"/>
+</g>
+</g>
+</g>
+</svg>
+<div class="blockScreen-customSchoolName" id="blockScreen-customSchoolName"></div>
+<div class="blockScreen-stripe">
+<div class="blockScreenStripe-title">Caution: {{.Host}} Certificate Error</div>
+<div class="blockScreenStripe-message">{{.Message}}</div>
+</div>
+<div class="blockScreen-systemMessage">We recommend that you do not continue to this website.</div>
+<a onclick="history.back()" class="buttonBack">Back to Safety</a>
+<a href="http://{{.APIAddress}}/api/passthrough?domain={{.Host}}&action=allow&url={{.OriginalURL}}" class="buttonProceed">I accept the risk. Proceed.</a>
+</div>
+</body>
+</html>
